@@ -198,8 +198,8 @@ local components = {
 
 local function doublecable(ingredients)
   for k,v in pairs(ingredients) do
-    local idx = 1
-    local amt = 2
+    local idx = ""
+    local amt = ""
     if v.name then
       idx = 'name'
       amt = 'amount'
@@ -216,15 +216,9 @@ for _,v in pairs(components) do
   end
 end
 
--- data.raw.recipe['basic-electronic-components'].result_count = 10
+data.raw.recipe['bob-basic-electronic-components'].results[1].amount = 10
 lib.set_energy_required('bob-basic-electronic-components', 4)
 
-local circuits = {
-  'cp-advanced-processing-board',
-  'cp-processing-board',
-  'cp-advanced-circuit-board',
-  'cp-electronic-circuit-board'
-}
 -- bobmods.lib.module.add_productivity_limitations(circuits)
 
 for k,v in pairs(data.raw.technology) do
